@@ -20,8 +20,8 @@ A game .... (some description goes there)
 
 ## Authors:
 
-- enes [somelinkgoesthere](https://github.com/kaanersoy/triwow)
-- eray [somelinkgoesthere](https://github.com/kaanersoy/triwow)
-- sueda [somelinkgoesthere](https://github.com/kaanersoy/triwow)
-- onur [somelinkgoesthere](https://github.com/kaanersoy/triwow)
-- kaan [somelinkgoesthere](https://github.com/kaanersoy/triwow)
+- Enes Dumanlı [somelinkgoesthere](https://github.com/enesdumanli)
+- Eray Durak [somelinkgoesthere](https://github.com/eraydurak)
+- Sueda Oguzalp [somelinkgoesthere](https://github.com/suedaoguzalp)
+- Onur Ozdemir [somelinkgoesthere](https://github.com/onurozdemir26)
+- kaan Ersoy [somelinkgoesthere](https://github.com/kaanersoy)
