@@ -11,12 +11,24 @@ A game .... (some description goes there)
 
 ### TODO LIST
 
-- [x] Sample Task
-- [x] Sample Task
-- [ ] Sample Task
-- [ ] Sample Task
-- [ ] Sample Task
-- [ ] ...
+> check the todos if you fix it.
+
+#### Login page section
+
+- [ ] Create Login Page
+  - [ ] Add login form
+  - [ ] Add login system with using Redux
+
+#### Mode-selection page section
+
+- [ ] Create a mode-selection page
+  - [ ] Get mode and redirect to selected mode page
+
+#### Logic section
+
+- [ ] Create a circle that shows random categories
+  - [ ] Add a logic that creates a random degree
+  - [ ] ...
 
 ## Authors:
 
