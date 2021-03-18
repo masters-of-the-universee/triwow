@@ -12,7 +12,7 @@ const LoginPage = () => {
 const sueda = () => {
 	return (
 		<div>
-			<h2> hello </h2>
+			
 			<h5> deneme basligi </h5>
 		</div>
 	);
