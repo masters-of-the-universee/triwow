@@ -1,11 +1,7 @@
 import './App.css';
 
 function App() {
-  return (
-    <section>
-      <h1></h1>
-    </section>
-  );
+  return <section></section>;
 }
 
 export default App;
