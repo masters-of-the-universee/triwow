@@ -13,18 +13,14 @@ A game .... (some description goes there)
 
 > check the todos if you fix it.
 
-#### Login page section
-
 - [ ] Create Login Page
+
   - [ ] Add login form
   - [ ] Add login system with using Redux
 
-#### Mode-selection page section
-
 - [ ] Create a mode-selection page
-  - [ ] Get mode and redirect to selected mode page
 
-#### Logic section
+  - [ ] Get mode and redirect to selected mode page
 
 - [ ] Create a circle that shows random categories
   - [ ] Add a logic that creates a random degree
