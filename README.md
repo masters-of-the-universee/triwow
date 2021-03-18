@@ -28,8 +28,8 @@ A game .... (some description goes there)
 
 ## Authors:
 
-- Enes Dumanlı [github@enesdumanli](https://github.com/enesdumanli)
-- Eray Durak [github@eraydurak](https://github.com/eraydurak)
-- Sueda Oguzalp [github@suedaoguzalp](https://github.com/suedaoguzalp)
-- Onur Ozdemir [github@onurozdemir26](https://github.com/onurozdemir26)
-- Kaan Ersoy [github@kaanersoy](https://github.com/kaanersoy)
+- [github@enesdumanli](https://github.com/enesdumanli)
+- [github@eraydurak](https://github.com/eraydurak)
+- [github@suedaoguzalp](https://github.com/suedaoguzalp)
+- [github@onurozdemir26](https://github.com/onurozdemir26)
+- [github@kaanersoy](https://github.com/kaanersoy)
