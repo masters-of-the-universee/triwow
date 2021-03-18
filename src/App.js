@@ -1,7 +1,12 @@
-import './App.css';
+import "./App.css";
+import LoginPage from "./views/login-page/login-page";
 
 function App() {
-  return <section></section>;
+	return (
+		<section>
+			<LoginPage />
+		</section>
+	);
 }
 
 export default App;
