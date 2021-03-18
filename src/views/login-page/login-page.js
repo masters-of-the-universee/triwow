@@ -2,9 +2,12 @@ import React from "react";
 import "./loginpage.scss";
 
 const LoginPage = () => {
-	return <div>
-		<h2> hello </h2>
-	</div>;
+	return (
+		<div>
+			<h2> hello </h2>
+			<h5> deneme basligi </h5>
+		</div>
+	);
 };
 
 export default LoginPage;
