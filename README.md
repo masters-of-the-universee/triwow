@@ -9,7 +9,7 @@ A game .... (some description goes there)
 - Trivia Open API -> [some link goes there](https://google.com)
 - ...
 
-### TODO LIST
+## TODO LIST
 
 > check the todos if you fix it.
 
