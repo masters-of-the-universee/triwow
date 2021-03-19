@@ -1,4 +1,5 @@
 import './App.css';
+import './mode-select-page/ModePage'
 
 function App() {
   return <section>
