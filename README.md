@@ -9,6 +9,35 @@ A game .... (some description goes there)
 - Trivia Open API -> [some link goes there](https://google.com)
 - ...
 
+## Installation
+
+#### clone the project
+
+```bash
+git clone
+```
+
+#### clone the project
+
+```bash
+git clone
+```
+
+#### install the depedencies
+
+```bash
+npm install
+```
+
+#### start the project
+
+```bash
+# for dev
+npm run start
+# for production
+npm run build
+```
+
 ## TODO LIST
 
 > check the todos if you fix it.
