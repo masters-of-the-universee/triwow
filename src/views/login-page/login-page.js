@@ -13,14 +13,14 @@ const LoginPage = () => {
 			<div className="rigth-section">
 				<h3>Write your name to play !</h3>
 				<div className="input-area">
-					<input
-						name="name"
-						type="text"
-						placeholder="Write your name.."
-						autoComplete="off"
-					/>
-					<button>Play !</button>
+					<div className="wrapper">
+						<div className="input-data">
+							<input name="name" type="text" autoComplete="off" required />
+							<label>Write your Name</label>
+						</div>
+					</div>
 				</div>
+				<button>Play !</button>
 			</div>
 		</div>
 	);
