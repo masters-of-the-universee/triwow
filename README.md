@@ -14,13 +14,7 @@ A game .... (some description goes there)
 #### clone the project
 
 ```bash
-git clone
-```
-
-#### clone the project
-
-```bash
-git clone
+git clone https://github.com/masters-of-the-universee/triwow.git
 ```
 
 #### install the depedencies
