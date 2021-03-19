@@ -94,7 +94,7 @@ body {
 			color: grey;
 			pointer-events: none;
 			transition: all 0.3s ease;
-			margin-left: 10px;
+			margin-left: 5px;
 		}
 		.underline {
 			position: absolute;
@@ -118,7 +118,7 @@ body {
 .input-data input:valid ~ label {
 	transform: translateY(-20px);
 	font-size: 15px;
-	margin-bottom: 5px;
+	margin-bottom: 20px;
 	color: #4158d0;
 }
 .input-data input:focus ~ .underline:before,

@@ -1,17 +1,15 @@
 import React from "react";
 import "./loginpage.scss";
+import circlePng from "../../assets/circle.svg";
 
 const LoginPage = () => {
 	return (
 		<div className="login-container">
 			<div className="left-section">
-				<img
-					src="https://png.pngtree.com/png-vector/20190828/ourmid/pngtree-colourful-wheel-of-fortune-for-lucky-contest-png-image_1714783.jpg"
-					alt="carkifelek"
-				/>
+				<img src={circlePng} alt="carkifelek" />
 			</div>
 			<div className="rigth-section">
-				<h3>Write your name to play !</h3>
+				<h3>Write your name to start !</h3>
 				<div className="input-area">
 					<div className="wrapper">
 						<div className="input-data">
