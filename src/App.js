@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-import './mode-select-page/ModePage'
-
-function App() {
-  return <section>
-
-    <h2>askdjashd</h2>
-    <h1>ashdhagsdds</h1>
-  </section>;
-=======
 import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import RandomCategory from './views/random-category-page/random-category-page';
@@ -48,7 +37,6 @@ function App() {
       </Router>
     </section>
   );
->>>>>>> f2836dcb221f4d2e121dcab946b8dd0ae95433d4
 }
 
 export default App;
