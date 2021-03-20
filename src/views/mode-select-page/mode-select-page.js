@@ -1,4 +1,5 @@
 import React from 'react';
+import './modeselectpage.scss';
 
 export default function ModeSelectPage() {
   return (
