@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
 import './random-category-page.scss';
-import circlePng from '../../assets/circle2.svg';
+import React, { useEffect, useState } from 'react';
+import circlePng from '../../assets/circle.svg';
 
 export default function RandomCategoryPage() {
-  const [rotateDeg, setRotateDeg] = useState(null);
+  const [rotateDeg, setRotateDeg] = useState(0);
 
   function getRandomDegree() {
     const degree = parseInt(Math.random() * (1900 - 600) + 600);
     const winner = degree % 360;
     const winIndex = Math.ceil(winner / 60);
-    console.log(degree);
-    console.log(winner);
-    console.log(winIndex);
-    setRotateDeg(degree);
+    return { degree, winIndex };
   }
 
   useEffect(() => {
-    getRandomDegree();
+    const deg = getRandomDegree();
+    setRotateDeg(deg.degree);
   }, []);
+
   return (
     <div>
       <h2>RandomCategoryPage</h2>

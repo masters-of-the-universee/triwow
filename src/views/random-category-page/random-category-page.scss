@@ -1,3 +1,6 @@
 #circle {
-  transition: 4s cubic-bezier(0.33, 1, 0.68, 1);
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: 4s all cubic-bezier(0.33, 1, 0.68, 1);
 }
