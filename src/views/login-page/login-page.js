@@ -1,8 +1,15 @@
-import React from "react";
+import React, { setState, useState } from "react";
+import { Link, withRouter } from "react-router-dom";
 import "./loginpage.scss";
 import circlePng from "../../assets/circle.svg";
 
 const LoginPage = () => {
+	const onChangeHandler = (e) => {
+		let eray = e.target.value;
+		console.log(eray);
+	};
+
+	const onClickHandler = () => {};
 	return (
 		<div className="login-container">
 			<div className="left-section">
@@ -13,15 +20,23 @@ const LoginPage = () => {
 				<div className="input-area">
 					<div className="wrapper">
 						<div className="input-data">
-							<input name="name" type="text" autoComplete="off" required />
+							<input
+								onChange={onChangeHandler}
+								name="name"
+								type="text"
+								autoComplete="off"
+								required
+							/>
 							<label>Write your Name</label>
 						</div>
 					</div>
 				</div>
-				<button>Play !</button>
+				<Link onClick={onClickHandler} to="/mode-selection">
+					Play
+				</Link>
 			</div>
 		</div>
 	);
 };
 
-export default LoginPage;
+export default withRouter(LoginPage);
