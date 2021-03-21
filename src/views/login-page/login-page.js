@@ -1,7 +1,7 @@
 import React, { setState, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./loginpage.scss";
-import circlePng from "../../assets/circle.svg";
+import circlePng from "../../assets/circle.png";
 
 const LoginPage = () => {
 	const onChangeHandler = (e) => {
