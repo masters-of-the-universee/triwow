@@ -1,14 +1,18 @@
 import './random-category-page.scss';
-import React, { useEffect, useState } from 'react';
-import circlePng from '../../assets/circle.svg';
+import React, { useEffect, useState, useRef } from 'react';
+import circlePng from '../../assets/circle.png';
+import downArrowSvg from '../../assets/down-arrow.svg';
+import '@lottiefiles/lottie-player';
 
 export default function RandomCategoryPage() {
   const [rotateDeg, setRotateDeg] = useState(undefined);
+  const [randomWinner, setRandomWinner] = useState(undefined);
+  const lootiePlayerEl = useRef(null);
 
   function getRandomDegree() {
     const degree = parseInt(Math.random() * (1900 - 600) + 600);
     const winner = degree % 360;
-    const winIndex = Math.ceil(winner / 60);
+    const winIndex = Math.floor(winner / 60);
     return { degree, winIndex };
   }
 
@@ -16,18 +20,40 @@ export default function RandomCategoryPage() {
     setTimeout(() => {
       const degree = getRandomDegree();
       setRotateDeg(degree.degree);
-      console.log(degree);
+      setTimeout(() => {
+        setRandomWinner(degree.winIndex);
+        lootiePlayerEl.current.play();
+      }, 4000);
     }, 200);
   }, []);
+
+  const categories = ['😌', '😇', '🥱', '😏', '🤩', '🤓'];
 
   const transformRotateStyle = {
     transform: `rotate(-${rotateDeg}deg)`,
   };
   return (
-    <section class="category">
-      <div className="rotate" style={transformRotateStyle}>
-        <img id="circle" src={circlePng} alt="circle" />
+    <section className="category">
+      <div className="random">
+        <div className="random__down">
+          <img src={downArrowSvg} alt="" />
+        </div>
+        <div className="random__rotate" style={transformRotateStyle}>
+          <img id="circle" src={circlePng} alt="circle" />
+        </div>
+        {randomWinner ? (
+          <div className="random__winner">
+            <h4>
+              Random Category is: <span>{categories[randomWinner]}</span>
+            </h4>
+          </div>
+        ) : null}
       </div>
+      <lottie-player
+        ref={lootiePlayerEl}
+        mode="normal"
+        src="https://assets3.lottiefiles.com/packages/lf20_pkanqwys.json"
+      ></lottie-player>
     </section>
   );
 }
