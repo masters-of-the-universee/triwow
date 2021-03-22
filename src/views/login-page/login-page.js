@@ -1,15 +1,25 @@
-import React, { setState, useState } from "react";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./loginpage.scss";
 import circlePng from "../../assets/circle.png";
+import { connect } from "react-redux";
+import { addingNewUsername } from "./../../actions/index";
 
-const LoginPage = () => {
+const LoginPage = ({ addingNewUsername }) => {
+	const [newName, setNewName] = useState("");
+
 	const onChangeHandler = (e) => {
-		let eray = e.target.value;
-		console.log(eray);
+		setNewName(e.target.value);
 	};
 
-	const onClickHandler = () => {};
+	useEffect(() => {
+		console.log(newName);
+	}, [newName]);
+
+	const onClickHandler = () => {
+		addingNewUsername(newName);
+	};
+
 	return (
 		<div className="login-container">
 			<div className="left-section">
@@ -39,4 +49,12 @@ const LoginPage = () => {
 	);
 };
 
-export default withRouter(LoginPage);
+const mapDispatchToProps = (dispatch) => ({
+	addingNewUsername: (text) => dispatch(addingNewUsername(text)),
+});
+
+const mapStateToProps = (state) => ({
+	value: state.newName,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
