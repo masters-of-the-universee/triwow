@@ -1,23 +1,10 @@
-import React from 'react';
-import { useEffect } from 'react';
 import './modeselectpage.scss';
+import React from "react";
+import { connect } from "react-redux";
 
-
-function ModeSelectPage() {
-
-  const modeClick = (e) => {
-
-    console.log(e.modeClick)
-  }
-
-  useEffect(() => {
-    // console.log(modeClick)
-  }, [])
-
-
-
-  return (
-    <div>
+const ModeSelectPage = ({ value }) => {
+	return (
+		<div>
       <div className="navbar">
         <h2>Mode Page</h2>
       </div>
@@ -27,7 +14,11 @@ function ModeSelectPage() {
         <button className="button" onClick={modeClick}>Mod3</button>
       </div>
     </div>
-  );
-}
+	);
+};
 
-export default ModeSelectPage;
+const mapStateToProps = (state) => ({
+	value: state.value,
+});
+export default connect(mapStateToProps)(ModeSelectPage);
+
