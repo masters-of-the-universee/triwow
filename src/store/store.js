@@ -1,13 +1,7 @@
-import { createStore } from 'redux';
+import { createStore } from "redux";
+import reducer from "../reducers/index";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-function reducer(state = 0, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1;
-    default:
-      return state;
-  }
-}
+const store = createStore(reducer, composeWithDevTools());
 
-const store = createStore(reducer);
 export default store;
