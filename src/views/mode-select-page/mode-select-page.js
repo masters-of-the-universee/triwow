@@ -1,9 +1,23 @@
+import './modeselectpage.scss';
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function ModeSelectPage() {
+const ModeSelectPage = ({ value }) => {
   return (
     <div>
-      <h2>Mode Select Page</h2>
+      <div className="navbar">
+        <h2>Mode Page</h2>
+      </div>
+      <div className="buttons">
+        <button className="button">Mod1</button>
+        <button className="button">Mod2</button>
+        <button className="button">Mod3</button>
+      </div>
     </div>
   );
-}
+};
+
+const mapStateToProps = (state) => ({
+  value: state.value,
+});
+export default connect(mapStateToProps)(ModeSelectPage);
