@@ -6,15 +6,15 @@ const ModeSelectPage = ({ value }) => {
   return (
     <div>
       <div className="navbar">
-        <h2>Mode Page</h2>
+        <h2> Welcome {value}</h2>
       </div>
       <div className="buttons">
-        <button className="button">Easy <span className="tooltiptext">
+        <button className="button">Easy <span className="tooltiptext tooltiptext-left">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt numquam recusandae, ad consequatur atque earum alias cupiditate eum esse, tempora dolores molestias labore hic? Cumque.</span> </button>
-        <button className="button">Medium <span className="tooltiptext">
+        <button className="button">Medium <span className="tooltiptext tooltiptext-mid">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nobis aperiam adipisci earum ipsum quia ut ad fugit accusantium sint tempora, aspernatur necessitatibus quam ratione?</span> </button>
         <button className="button">Hard
-        <span className="tooltiptext">
+        <span className="tooltiptext tooltiptext-right">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquid natus consequuntur voluptatem voluptatibus id ab blanditiis cupiditate autem, saepe quisquam accusamus necessitatibus eius consectetur!</span> </button>
       </div>
     </div>
