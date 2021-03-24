@@ -89,13 +89,12 @@ nav {
 	//box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
 	.input-data {
-		height: 40px;
 		width: 100%;
 		position: relative;
 		input {
 			background-color: rgba(63, 118, 235, 0.233);
 			border-radius: 10px;
-			height: 100%;
+			padding: 15px;
 			width: 90%;
 			border: none;
 			outline: none;
@@ -110,7 +109,7 @@ nav {
 		}
 		label {
 			position: absolute;
-			bottom: 10px;
+			bottom: 15px;
 			left: 10px;
 			color: rgb(75, 59, 218);
 			pointer-events: none;
@@ -140,7 +139,7 @@ nav {
 .input-data input:valid ~ label {
 	transform: translateY(-20px);
 	font-size: 15px;
-	margin-bottom: 16px;
+	margin-bottom: 25px;
 	color: #4158d0;
 }
 .input-data input:focus ~ .underline:before,
