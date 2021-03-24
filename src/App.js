@@ -21,6 +21,9 @@ function App() {
 						</li>
 					</ul>
 				</nav>
+				<div className="tooltip-container">
+					
+				</div>
 				<main>
 					<Switch>
 						<Route path="/random-category">
