@@ -37,7 +37,6 @@ const LoginPage = ({ addingNewUsername }) => {
 					<div className="input-area">
 						<div className="wrapper">
 							<div className="input-data">
-								<form>
 								<input
 									onChange={onChangeHandler}
 									name="name"
@@ -46,7 +45,6 @@ const LoginPage = ({ addingNewUsername }) => {
 									required
 								/>
 								<label>Write your Name</label>
-								</form>
 							</div>
 						</div>
 					</div>
