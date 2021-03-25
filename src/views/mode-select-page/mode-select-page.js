@@ -6,7 +6,7 @@ const ModeSelectPage = ({ value }) => {
   return (
     <div>
       <div className="navbar">
-        <h2> Welcome {value}</h2>
+        <h2> Welcome {value} </h2>
       </div>
       <div className="buttons">
         <button className="button">Easy <span className="tooltiptext tooltiptext-left">
