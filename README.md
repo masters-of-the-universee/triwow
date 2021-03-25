@@ -36,17 +36,16 @@ npm run build
 
 > check the todos if you fix it.
 
-- [ ] Create Login Page
+- [x] Create Login Page
+  - [x] Add login form
+  - [x] Add login system with using Redux
 
-  - [ ] Add login form
-  - [ ] Add login system with using Redux
-
-- [ ] Create a mode-selection page
-
+- [x] Create a mode-selection page
   - [ ] Get mode and redirect to selected mode page
 
-- [ ] Create a circle that shows random categories
-  - [ ] Add a logic that creates a random degree
+- [x] Create a circle that shows random categories
+  - [x] Add a logic that creates a random degree
+  - [ ] Fix styles for better look.
   - [ ] ...
 
 ## Authors:
