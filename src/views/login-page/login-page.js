@@ -17,7 +17,13 @@ const LoginPage = ({ addingNewUsername }) => {
 	}, [newName]);
 
 	const onClickHandler = () => {
-		addingNewUsername(newName);
+		if (newName === "") {
+			alert("You are logging without a name.");
+			addingNewUsername(newName);
+		}
+	};
+	const onClickHandlerTwo = () => {
+		addingNewUsername("");
 	};
 
 	return (
@@ -45,7 +51,7 @@ const LoginPage = ({ addingNewUsername }) => {
 					<Link onClick={onClickHandler} to="/mode-selection">
 						Play
 					</Link>
-					<Link onClick={onClickHandler} to="/mode-selection">
+					<Link onClick={onClickHandlerTwo} to="/mode-selection">
 						Play as Anonymus
 					</Link>
 				</div>
