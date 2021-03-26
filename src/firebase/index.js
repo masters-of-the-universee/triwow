@@ -25,11 +25,28 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 const firestore = firebase.firestore();
 
-function getUsers() {
-  const userRef = firestore.collection('users').doc('oWZVcTRi0fcG6I9bso3n');
-  userRef.get().then((data) => {
-    data.exists ? console.log(data.data()) : console.log('gelmedi aq');
-  });
+class Database {
+  getUsers() {
+    let users = [];
+    firestore
+      .collection('users')
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          users.push(doc.data());
+        });
+      });
+    return users;
+  }
+  async addUser(data) {
+    const users = firestore.collection('users');
+    try{
+      const response = await users.add({ ...data, created_at: Date() });
+      return response.id;
+    }catch(err){
+      return err
+    }
+  }
 }
 
-export default getUsers;
+export default Database;
