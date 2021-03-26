@@ -1,0 +1,30 @@
+$blue: #53b0fc;
+$pink: #e8d7fe;
+$orange: #fba51e;
+$green: #d1e149;
+$purple: #9f7cfb;
+$green: #5ce0d5;
+
+.question-card {
+  width: 500px;
+  padding: 50px 20px;
+  margin: 0 auto;
+  background-color: $green;
+  & > * + * {
+    margin-top: 20px;
+  }
+  h3 {
+  }
+  p {
+  }
+  &-answers {
+    ul {
+      list-style-type: none;
+      li {
+        & + li {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
