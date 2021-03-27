@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './question.scss';
 import ReactHtmlParser from 'react-html-parser';
 
+function shuffle(array) {
+  let shuffledArray = array;
+  shuffledArray.sort(() => Math.random() - 0.5);
+  return shuffledArray;
+}
+
 const Question = ({ question, handleAnswersStat }) => {
   const types = {
     MULTIPLE: 'multiple',
@@ -10,29 +16,16 @@ const Question = ({ question, handleAnswersStat }) => {
   const [answers, setAnswers] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState(undefined);
 
-  function shuffle(array) {
-    let shuffledArray = array;
-    shuffledArray.sort(() => Math.random() - 0.5);
-    return shuffledArray;
-  }
+  useEffect(() => {
+    setAnswers(shuffle([question.correct_answer, ...question.incorrect_answers]));
+  }, [question]);
 
   useEffect(() => {
-    console.log(question);
-    question.type === types.MULTIPLE
-      ? setAnswers(shuffle([question.correct_answer, ...question.incorrect_answers]))
-      : console.log('boolean');
-  }, []);
-
-  useEffect(() => {
-    console.log(answers);
-  }, [answers]);
-
-  useEffect(() => {
+    setAnswers(shuffle([question.correct_answer, ...question.incorrect_answers]));
     if (selectedAnswer === question.correct_answer) {
       handleAnswersStat({ answer: true });
-      return console.log('doğruu');
+      return;
     }
-    console.log('yanlış');
     handleAnswersStat({ answer: false });
   }, [selectedAnswer]);
 
@@ -44,10 +37,10 @@ const Question = ({ question, handleAnswersStat }) => {
           {question.type === types.BOOLEAN ? (
             <ul>
               <li>
-                <button>{question.correct_answer}</button>
+                <button onClick={setSelectedAnswer(true)}>True</button>
               </li>
               <li>
-                <button>{question.incorrect_answers[0]}</button>
+                <button onClick={setSelectedAnswer(false)}>False</button>
               </li>
             </ul>
           ) : (
