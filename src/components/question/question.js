@@ -17,6 +17,7 @@ const Question = ({ question, handleAnswersStat }) => {
   }
 
   useEffect(() => {
+    console.log(question);
     question.type === types.MULTIPLE
       ? setAnswers(shuffle([question.correct_answer, ...question.incorrect_answers]))
       : console.log('boolean');
@@ -35,37 +36,39 @@ const Question = ({ question, handleAnswersStat }) => {
     handleAnswersStat({ answer: false });
   }, [selectedAnswer]);
 
-  return (
-    <div className="question-card">
-      <p>{ReactHtmlParser(question.question)}</p>
-      <div className="question-card-answers">
-        {question.type === types.BOOLEAN ? (
-          <ul>
-            <li>
-              <button>{question.correct_answer}</button>
-            </li>
-            <li>
-              <button>{question.incorrect_answers[0]}</button>
-            </li>
-          </ul>
-        ) : (
-          <ul>
-            {answers.map((a, i) => (
-              <li key={i}>
-                <button
-                  onClick={() => {
-                    setSelectedAnswer(a);
-                  }}
-                >
-                  {a}
-                </button>
+  if (question)
+    return (
+      <div className="question-card">
+        <p>{ReactHtmlParser(question.question)}</p>
+        <div className="question-card-answers">
+          {question.type === types.BOOLEAN ? (
+            <ul>
+              <li>
+                <button>{question.correct_answer}</button>
               </li>
-            ))}
-          </ul>
-        )}
+              <li>
+                <button>{question.incorrect_answers[0]}</button>
+              </li>
+            </ul>
+          ) : (
+            <ul>
+              {answers.map((a, i) => (
+                <li key={i}>
+                  <button
+                    onClick={() => {
+                      setSelectedAnswer(a);
+                    }}
+                  >
+                    {a}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
-    </div>
-  );
+    );
+  return <div>Question undefined</div>;
 };
 
 export default Question;

@@ -3,9 +3,11 @@ import Question from '../../components/question/question';
 
 const QuestionsPage = function () {
   const [questions, setQuestions] = useState([]);
+  const [questionOrder, setQuestionOrder] = useState(1);
+  const [answers, setAnswers] = useState([]);
 
   async function getQuestions() {
-    const response = await fetch('https://opentdb.com/api.php?amount=1');
+    const response = await fetch('https://opentdb.com/api.php?amount=5');
     const data = await response.json();
     setQuestions(data.results);
   }
@@ -14,22 +16,22 @@ const QuestionsPage = function () {
     getQuestions();
   }, []);
 
-  useEffect(() => {
-    if (questions) console.log(questions);
-  }, [questions]);
-
   function handleAnswersStat(data) {
     console.log('handled some function', data);
+    setAnswers([...answers, data.answer]);
+    setQuestionOrder(questionOrder + 1);
   }
 
   return (
     <div>
+      <p>Answers:{answers.toString()}</p>
       <h1>Questions page</h1>
-      {questions
-        ? questions.map((q, i) => (
-            <Question key={i} handleAnswersStat={handleAnswersStat} question={q}></Question>
-          ))
-        : null}
+      {questions[questionOrder] !== undefined ? (
+        <Question
+          handleAnswersStat={handleAnswersStat}
+          question={questions[questionOrder]}
+        ></Question>
+      ) : null}
     </div>
   );
 };
