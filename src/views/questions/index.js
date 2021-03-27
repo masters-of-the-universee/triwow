@@ -1,28 +1,37 @@
-import React, {useEffect, useState} from 'react';
-import Question from '../../components/question/question'
+import React, { useEffect, useState } from 'react';
+import Question from '../../components/question/question';
 
-const QuestionsPage = function() {
+const QuestionsPage = function () {
   const [questions, setQuestions] = useState([]);
 
-  async function getQuestions(){
+  async function getQuestions() {
     const response = await fetch('https://opentdb.com/api.php?amount=1');
-    const data =  await response.json();
-    setQuestions(data.results)
+    const data = await response.json();
+    setQuestions(data.results);
   }
 
-  useEffect(() => { 
+  useEffect(() => {
     getQuestions();
-  }, [])
+  }, []);
 
-  useEffect(()=> {
-    if(questions) console.log(questions)  
-  }, [questions])
+  useEffect(() => {
+    if (questions) console.log(questions);
+  }, [questions]);
+
+  function handleAnswersStat(data) {
+    console.log('handled some function', data);
+  }
+
   return (
     <div>
       <h1>Questions page</h1>
-      {questions ? questions.map((q,i) => (<Question key={i} question={q}></Question>)) : null}
+      {questions
+        ? questions.map((q, i) => (
+            <Question key={i} handleAnswersStat={handleAnswersStat} question={q}></Question>
+          ))
+        : null}
     </div>
-  )
-}
+  );
+};
 
 export default QuestionsPage;

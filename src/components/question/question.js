@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './question.scss';
 import ReactHtmlParser from 'react-html-parser';
 
-const Question = ({ question }) => {
+const Question = ({ question, handleAnswersStat }) => {
   const types = {
     MULTIPLE: 'multiple',
     BOOLEAN: 'boolean'
@@ -28,9 +28,11 @@ const Question = ({ question }) => {
 
   useEffect(() => {
     if (selectedAnswer === question.correct_answer) {
+      handleAnswersStat({ answer: true });
       return console.log('doğruu');
     }
     console.log('yanlış');
+    handleAnswersStat({ answer: false });
   }, [selectedAnswer]);
 
   return (
@@ -48,8 +50,8 @@ const Question = ({ question }) => {
           </ul>
         ) : (
           <ul>
-            {answers.map((a) => (
-              <li>
+            {answers.map((a, i) => (
+              <li key={i}>
                 <button
                   onClick={() => {
                     setSelectedAnswer(a);
