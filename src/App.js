@@ -25,7 +25,7 @@ function App() {
         </nav>
         <main>
           <Switch>
-            <Route path="/questions">
+            <Route path="/questions/:categoryId">
               <Questions />
             </Route>
             <Route path="/random-category">
