@@ -11,19 +11,19 @@ A game .... (some description goes there)
 
 ## Installation
 
-#### clone the project
+#### Clone the project
 
 ```bash
 git clone https://github.com/masters-of-the-universee/triwow.git
 ```
 
-#### install the depedencies
+#### Install the depedencies
 
 ```bash
 npm install
 ```
 
-#### start the project
+#### Start the project
 
 ```bash
 # for dev
