@@ -17,12 +17,13 @@ const Question = ({ question, handleAnswersStat }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(undefined);
 
   useEffect(() => {
+    setSelectedAnswer(undefined);
     setAnswers(shuffle([question.correct_answer, ...question.incorrect_answers]));
   }, [question]);
 
   useEffect(() => {
     setAnswers(shuffle([question.correct_answer, ...question.incorrect_answers]));
-    if (selectedAnswer) {
+    if (selectedAnswer !== undefined) {
       if (selectedAnswer === question.correct_answer) {
         handleAnswersStat({ answer: true });
         return;
@@ -39,10 +40,10 @@ const Question = ({ question, handleAnswersStat }) => {
           {question.type === types.BOOLEAN ? (
             <ul>
               <li>
-                <button onClick={setSelectedAnswer(true)}>True</button>
+                <button onClick={() => setSelectedAnswer(true)}>True</button>
               </li>
               <li>
-                <button onClick={setSelectedAnswer(false)}>False</button>
+                <button onClick={() => setSelectedAnswer(false)}>False</button>
               </li>
             </ul>
           ) : (
