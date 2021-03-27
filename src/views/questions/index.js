@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Question from '../../components/question/question';
 
-const QuestionsPage = function () {
+const QuestionsPage = function ({ match, ...props }) {
   const [questions, setQuestions] = useState([]);
   const [questionOrder, setQuestionOrder] = useState(1);
   const [answers, setAnswers] = useState([]);
 
-  async function getQuestions() {
-    const response = await fetch('https://opentdb.com/api.php?amount=5');
+  async function getQuestions(category) {
+    const response = await fetch(`https://opentdb.com/api.php?amount=5&category=${category}`);
     const data = await response.json();
+    console.log(data);
     setQuestions(data.results);
   }
 
+  const { categoryId } = useParams();
   useEffect(() => {
-    getQuestions();
+    getQuestions(categoryId);
   }, []);
 
   function handleAnswersStat(data) {
