@@ -27,6 +27,15 @@ export default function RandomCategoryPage() {
     }, 200);
   }, []);
 
+  const questionCategoryList = {
+    GENERAL_KNOWLEDGE: 9,
+    SPORTS: 21,
+    GEOGRAPHY: 22,
+    HISTORY: 23,
+    ARTS: 25,
+    SCIENCE: 17
+  };
+
   const categories = ['😌', '😇', '🥱', '😏', '🤩', '🤓'];
 
   const transformRotateStyle = {
