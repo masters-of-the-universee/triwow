@@ -7,12 +7,12 @@ function shuffle(array) {
   shuffledArray.sort(() => Math.random() - 0.5);
   return shuffledArray;
 }
+const types = {
+  MULTIPLE: 'multiple',
+  BOOLEAN: 'boolean'
+};
 
 const Question = ({ question, handleAnswersStat }) => {
-  const types = {
-    MULTIPLE: 'multiple',
-    BOOLEAN: 'boolean'
-  };
   const [answers, setAnswers] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState(undefined);
 
@@ -22,11 +22,13 @@ const Question = ({ question, handleAnswersStat }) => {
 
   useEffect(() => {
     setAnswers(shuffle([question.correct_answer, ...question.incorrect_answers]));
-    if (selectedAnswer === question.correct_answer) {
-      handleAnswersStat({ answer: true });
-      return;
+    if (selectedAnswer) {
+      if (selectedAnswer === question.correct_answer) {
+        handleAnswersStat({ answer: true });
+        return;
+      }
+      handleAnswersStat({ answer: false });
     }
-    handleAnswersStat({ answer: false });
   }, [selectedAnswer]);
 
   if (question)
