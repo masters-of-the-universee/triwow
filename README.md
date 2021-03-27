@@ -11,19 +11,19 @@ A game .... (some description goes there)
 
 ## Installation
 
-#### clone the project
+#### Clone the project
 
 ```bash
 git clone https://github.com/masters-of-the-universee/triwow.git
 ```
 
-#### install the depedencies
+#### Install the depedencies
 
 ```bash
 npm install
 ```
 
-#### start the project
+#### Start the project
 
 ```bash
 # for dev
@@ -46,8 +46,13 @@ npm run build
 - [x] Create a circle that shows random categories
   - [x] Add a logic that creates a random degree
   - [ ] Fix styles for better look.
-  - [ ] ...
+  - [x] Push user to random category questions page.
 
+- [x] Add questions-view to show questions
+  - [x] Get random category value from random-category
+  - [x] Show questions about taken random category value
+  - [ ] Fix styles to better view
+  - [ ] ...
 ## Authors:
 
 - [github@enesdumanli](https://github.com/enesdumanli)

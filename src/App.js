@@ -1,10 +1,9 @@
 import { Link, Switch, BrowserRouter as Router, Route } from "react-router-dom";
-import { useEffect } from "react";
 import "./App.css";
 import RandomCategory from "./views/random-category-page/random-category-page";
+import Questions from "./views/questions/index";
 import ModeSelectionPage from "./views/mode-select-page/mode-select-page";
 import LoginPage from "./views/login-page/login-page";
-import getUsers from "./firebase/index";
 
 function App() {
 	return (
@@ -25,6 +24,9 @@ function App() {
 				</nav>
 				<main>
 					<Switch>
+						<Route path="/questions/:categoryId">
+							<Questions />
+						</Route>
 						<Route path="/random-category">
 							<RandomCategory />
 						</Route>
