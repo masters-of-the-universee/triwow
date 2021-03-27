@@ -39,10 +39,10 @@ const Question = ({ question, handleAnswersStat }) => {
           {question.type === types.BOOLEAN ? (
             <ul>
               <li>
-                <button onClick={setSelectedAnswer(true)}>True</button>
+                <button onClick={() => setSelectedAnswer(true)}>True</button>
               </li>
               <li>
-                <button onClick={setSelectedAnswer(false)}>False</button>
+                <button onClick={() => setSelectedAnswer(false)}>False</button>
               </li>
             </ul>
           ) : (
