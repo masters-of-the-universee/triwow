@@ -38,7 +38,8 @@ const Question = ({ question, handleAnswersStat }) => {
 	}, [selectedAnswer]);
 
 	useEffect(() => {
-		countdown > 0 && setTimeout(() => setCountdown(countdown - 1), 1000);
+		if (countdown > 0)
+			return setTimeout(() => setCountdown(countdown - 1), 1000);
 	}, [countdown]);
 
 	if (question)
