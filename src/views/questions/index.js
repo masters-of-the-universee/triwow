@@ -9,18 +9,23 @@ const QuestionsPage = function ({ match, ...props }) {
   const [questions, setQuestions] = useState([]);
   const [questionOrder, setQuestionOrder] = useState(0);
   const [answers, setAnswers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isGameDone, setGameDone] = useState(false);
+
+  const [countdown, setCountdown] = useState(15);
+  
+  useEffect(() => {
+    if (countdown > 0) return setTimeout(() => setCountdown(countdown - 1), 1000);
+  }, [countdown]);
 
   async function getQuestions(category) {
-    setIsLoading(true);
     const response = await fetch(`https://opentdb.com/api.php?amount=5&category=${category}`);
     const data = await response.json();
     console.log(data);
-    setIsLoading(false);
     setQuestions(data.results);
   }
 
   const { categoryId } = useParams();
+
   useEffect(() => {
     getQuestions(categoryId);
   }, []);
@@ -31,6 +36,10 @@ const QuestionsPage = function ({ match, ...props }) {
     setQuestionOrder(questionOrder + 1);
   }
 
+  useEffect(() => {
+    
+  }, [answers, countdown])
+
   return (
     <div>
       <div className="answers">
@@ -40,6 +49,7 @@ const QuestionsPage = function ({ match, ...props }) {
         <Question
           handleAnswersStat={handleAnswersStat}
           question={questions[questionOrder]}
+          countdown={countdown}
         ></Question>
       ) : (
         <div className="loader-container">
