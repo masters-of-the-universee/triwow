@@ -10,7 +10,7 @@ $green: #5ce0d5;
   padding: 50px 20px;
   margin: 0 auto;
   border-radius: 10px;
-  background-color: rgba($color: $orange, $alpha: 0.3);
+  background-color: rgba($color: $purple, $alpha: 0.3);
   position: relative;
   animation: fadeUpIn 300ms ease-in-out;
   & > * + * {
@@ -18,7 +18,7 @@ $green: #5ce0d5;
   }
   p {
     font-size: 20px;
-    min-height: 150px;
+    min-height: 128px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -33,16 +33,17 @@ $green: #5ce0d5;
         align-self: stretch;
         display: block;
         button {
-          background-color: $purple;
+          background-color: rgba($color: $purple, $alpha: 0.8);
           border-radius: 8px;
+          border: 0px;
+          border-bottom: 3px solid $purple;
           box-shadow: transparent;
-          border: 2px solid rgba($color: $green, $alpha: 0.4);
           padding: 12px 8px;
           color: #fff;
           text-align: left;
           width: 100%;
           display: block;
-          font-size: 16px;
+          font-size: 18px;
         }
       }
     }
