@@ -60,7 +60,7 @@ const Question = ({ question, handleAnswersStat }) => {
                       setSelectedAnswer(a);
                     }}
                   >
-                    {a}
+                    {ReactHtmlParser(a)}
                   </button>
                 </li>
               ))}
