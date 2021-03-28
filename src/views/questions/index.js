@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Question from '../../components/question/question';
+import Checkbox from '../../components/checkbox/index';
+import './index.scss';
 
 const QuestionsPage = function ({ match, ...props }) {
   const [questions, setQuestions] = useState([]);
-  const [questionOrder, setQuestionOrder] = useState(1);
+  const [questionOrder, setQuestionOrder] = useState(0);
   const [answers, setAnswers] = useState([]);
 
   async function getQuestions(category) {
@@ -27,8 +29,9 @@ const QuestionsPage = function ({ match, ...props }) {
 
   return (
     <div>
-      <p>Answers:{answers.toString()}</p>
-      <h1>Questions page</h1>
+      <div className="answers">
+        {answers ? answers.map((ans, i) => <Checkbox key={i} isTrue={ans} color="#000" />) : null}
+      </div>
       {questions[questionOrder] !== undefined ? (
         <Question
           handleAnswersStat={handleAnswersStat}
