@@ -16,6 +16,13 @@ $green: #5ce0d5;
   & > * + * {
     margin-top: 20px;
   }
+  p {
+    font-size: 20px;
+    min-height: 150px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
   &-answers {
     ul {
       list-style-type: none;
@@ -30,20 +37,22 @@ $green: #5ce0d5;
           border-radius: 8px;
           box-shadow: transparent;
           border: 2px solid rgba($color: $green, $alpha: 0.4);
-          padding: 10px 15px;
+          padding: 12px 8px;
           color: #fff;
           text-align: left;
           width: 100%;
           display: block;
+          font-size: 16px;
         }
       }
     }
   }
   .timer {
     position: absolute;
-    content: '';
     top: 0;
-    right: 15px;
+    right: 30px;
+    font-weight: 900;
+    font-size: 18px;
   }
 }
 
