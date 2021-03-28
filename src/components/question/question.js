@@ -68,7 +68,7 @@ const Question = ({ question, handleAnswersStat }) => {
           )}
         </div>
         <div className="timer">
-          <p>{countdown}</p>
+          <span>{countdown}s</span>
         </div>
       </div>
     );
