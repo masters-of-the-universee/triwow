@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./question.scss";
 import ReactHtmlParser from "react-html-parser";
 
@@ -38,7 +38,8 @@ const Question = ({ question, handleAnswersStat }) => {
 	}, [selectedAnswer]);
 
 	useEffect(() => {
-		countdown > 0 && setTimeout(() => setCountdown(countdown - 1), 1000);
+		if (countdown > 0)
+			return setTimeout(() => setCountdown(countdown - 1), 1000);
 	}, [countdown]);
 
 	if (question)
