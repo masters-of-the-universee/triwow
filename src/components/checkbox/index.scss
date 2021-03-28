@@ -1,0 +1,57 @@
+.checkbox {
+  border-radius: 50%;
+  background-color: rgba($color: #fff, $alpha: 0);
+  .tick {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    stroke-width: 6;
+    &.checked {
+      stroke-dashoffset: 0;
+      -webkit-animation: checkAnimation 300ms ease-out;
+      animation: checkAnimation 300ms ease-out;
+    }
+  }
+  .false {
+    stroke-dasharray: 78;
+    stroke-dashoffset: 78;
+    stroke-width: 7;
+    &.active {
+      stroke-dashoffset: 0;
+      -webkit-animation: falseAnimation 300ms ease-out;
+      animation: falseAnimation 300ms ease-out;
+    }
+  }
+}
+
+@keyframes checkAnimation {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes falseAnimation {
+  0% {
+    stroke-dashoffset: 78;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes checkAnimation {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes falseAnimation {
+  0% {
+    stroke-dashoffset: 78;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

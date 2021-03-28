@@ -1,0 +1,11 @@
+.answers {
+  min-height: 200px;
+  width: 500px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  .checkbox {
+    width: 50px;
+  }
+}

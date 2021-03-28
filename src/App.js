@@ -1,6 +1,7 @@
 import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import RandomCategory from './views/random-category-page/random-category-page';
+import Questions from './views/questions/index';
 import ModeSelectionPage from './views/mode-select-page/mode-select-page';
 import LoginPage from './views/login-page/login-page';
 import LeaderBoard from './views/leader-board/leaderboard';
@@ -29,6 +30,9 @@ function App() {
           <Switch>
             <Route path="/leader-board">
               <LeaderBoard />
+            </Route>
+            <Route path="/questions/:categoryId">
+              <Questions />
             </Route>
             <Route path="/random-category">
               <RandomCategory />

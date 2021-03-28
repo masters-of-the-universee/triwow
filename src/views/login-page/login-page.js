@@ -20,9 +20,9 @@ const LoginPage = ({ addingNewUsername }) => {
   const onClickHandler = async () => {
     addingNewUsername(newName);
     const db = new Database();
-		const response = await db.addUser({ name: newName });
-		console.log(response)
-	};
+    const response = await db.addUser({ name: newName });
+    console.log(response);
+  };
 
   return (
     <div className="main-wrapper">

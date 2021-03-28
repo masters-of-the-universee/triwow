@@ -40,11 +40,11 @@ class Database {
   }
   async addUser(data) {
     const users = firestore.collection('users');
-    try{
+    try {
       const response = await users.add({ ...data, created_at: Date() });
       return response.id;
-    }catch(err){
-      return err
+    } catch (err) {
+      return err;
     }
   }
 }

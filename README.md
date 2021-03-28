@@ -11,19 +11,19 @@ A game .... (some description goes there)
 
 ## Installation
 
-#### clone the project
+#### Clone the project
 
 ```bash
 git clone https://github.com/masters-of-the-universee/triwow.git
 ```
 
-#### install the depedencies
+#### Install the depedencies
 
 ```bash
 npm install
 ```
 
-#### start the project
+#### Start the project
 
 ```bash
 # for dev
@@ -36,18 +36,32 @@ npm run build
 
 > check the todos if you fix it.
 
-- [x] Create Login Page
+- [x] Login page
   - [x] Add login form
   - [x] Add login system with using Redux
 
-- [x] Create a mode-selection page
-  - [ ] Get mode and redirect to selected mode page
+- [x] Mode selection page
+  - [x] Get mode and redirect to selected mode page
+  - [ ] Re-design and layout
 
-- [x] Create a circle that shows random categories
+- [x] Random Category Page
   - [x] Add a logic that creates a random degree
+  - [x] Push user to random category questions page.
+  - [ ] Category images and icons
+  - [ ] Chance-wheel re-design
   - [ ] Fix styles for better look.
+
+- [x] Questions Page
+  - [x] Get random category value from random-category
+  - [x] Show questions about taken random category value
+  - [ ] Fix styles to better view
   - [ ] ...
 
+- [ ] Leaderboard Component
+  - [ ] Database integration 
+  - [ ] Current players point
+  - [ ] Replay button integration
+  - [ ] ...
 ## Authors:
 
 - [github@enesdumanli](https://github.com/enesdumanli)

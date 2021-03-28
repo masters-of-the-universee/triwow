@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import circlePng from '../../assets/circle.png';
 import downArrowSvg from '../../assets/down-arrow.svg';
 import '@lottiefiles/lottie-player';
+import { useHistory } from 'react-router-dom';
 
 export default function RandomCategoryPage() {
   const [rotateDeg, setRotateDeg] = useState(undefined);
@@ -27,10 +28,36 @@ export default function RandomCategoryPage() {
     }, 200);
   }, []);
 
+  const history = useHistory();
+  useEffect(() => {
+    const questionCategoryList = {
+      GENERAL_KNOWLEDGE: 9,
+      SPORTS: 21,
+      GEOGRAPHY: 22,
+      HISTORY: 23,
+      ARTS: 25,
+      SCIENCE: 17
+    };
+    const { ARTS, GENERAL_KNOWLEDGE, GEOGRAPHY, HISTORY, SCIENCE, SPORTS } = questionCategoryList;
+    const winnerRouterPushing = {
+      0: SPORTS,
+      1: ARTS,
+      2: GENERAL_KNOWLEDGE,
+      3: GEOGRAPHY,
+      4: HISTORY,
+      5: SCIENCE
+    };
+    if (randomWinner) {
+      setTimeout(() => {
+        history.push(`/questions/${winnerRouterPushing[randomWinner]}`);
+      }, 300);
+    }
+  }, [randomWinner]);
+
   const categories = ['😌', '😇', '🥱', '😏', '🤩', '🤓'];
 
   const transformRotateStyle = {
-    transform: `rotate(-${rotateDeg}deg)`,
+    transform: `rotate(-${rotateDeg}deg)`
   };
   return (
     <section className="category">
