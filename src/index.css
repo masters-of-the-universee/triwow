@@ -1,3 +1,13 @@
+:root{
+  --firstcolor: #ac6bd3;
+  --secondcolor: #ff4aa9;
+  --thirdcolor: #3f6cf5;
+  --fourthcolor: #ffcc00;
+  --fifthcolor: #4ed26c;
+  --sixthcolor: #fe6255;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
 
 body {

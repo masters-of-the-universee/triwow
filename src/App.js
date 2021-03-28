@@ -1,5 +1,4 @@
 import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
 import RandomCategory from './views/random-category-page/random-category-page';
 import Questions from './views/questions/index';
 import ModeSelectionPage from './views/mode-select-page/mode-select-page';
