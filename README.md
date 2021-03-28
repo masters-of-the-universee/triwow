@@ -47,6 +47,8 @@ npm run build
 - [x] Random Category Page
   - [x] Add a logic that creates a random degree
   - [x] Push user to random category questions page.
+  - [ ] Category images and icons
+  - [ ] Chance-wheel re-design
   - [ ] Fix styles for better look.
 
 - [x] Questions Page
