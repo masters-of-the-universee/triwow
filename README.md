@@ -36,22 +36,29 @@ npm run build
 
 > check the todos if you fix it.
 
-- [x] Create Login Page
+- [x] Login page
   - [x] Add login form
   - [x] Add login system with using Redux
 
-- [x] Create a mode-selection page
-  - [ ] Get mode and redirect to selected mode page
+- [x] Mode selection page
+  - [x] Get mode and redirect to selected mode page
+  - [ ] Re-design and layout
 
-- [x] Create a circle that shows random categories
+- [x] Random Category Page
   - [x] Add a logic that creates a random degree
-  - [ ] Fix styles for better look.
   - [x] Push user to random category questions page.
+  - [ ] Fix styles for better look.
 
-- [x] Add questions-view to show questions
+- [x] Questions Page
   - [x] Get random category value from random-category
   - [x] Show questions about taken random category value
   - [ ] Fix styles to better view
+  - [ ] ...
+
+- [ ] Leaderboard Component
+  - [ ] Database integration 
+  - [ ] Current players point
+  - [ ] Replay button integration
   - [ ] ...
 ## Authors:
 
