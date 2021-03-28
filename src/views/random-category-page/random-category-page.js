@@ -50,11 +50,11 @@ export default function RandomCategoryPage() {
     if (randomWinner) {
       setTimeout(() => {
         history.push(`/questions/${winnerRouterPushing[randomWinner]}`);
-      }, 300);
+      }, 1200);
     }
   }, [randomWinner]);
 
-  const categories = ['😌', '😇', '🥱', '😏', '🤩', '🤓'];
+  const categories = ['Geography 🌎', 'Sports 🏈', 'History ⚔', 'General Knowledge 📚', 'Science ⚛', 'Art 🎨'];
 
   const transformRotateStyle = {
     transform: `rotate(-${rotateDeg}deg)`
@@ -71,7 +71,7 @@ export default function RandomCategoryPage() {
         {randomWinner ? (
           <div className="random__winner">
             <h4>
-              Random Category is: <span>{categories[randomWinner]}</span>
+              <span>{categories[randomWinner]}</span>
             </h4>
           </div>
         ) : null}
