@@ -15,10 +15,7 @@ const types = {
 const Question = ({ question, handleAnswersStat }) => {
 	const [answers, setAnswers] = useState([]);
 	const [selectedAnswer, setSelectedAnswer] = useState(undefined);
-	const [num, setNum] = useState(15);
-	const [pause, setPause] = useState(false);
-	let count = useRef(1);
-	let intervalRef = useRef();
+	const [countdown, setCountdown] = useState(15);
 
 	useEffect(() => {
 		setSelectedAnswer(undefined);
@@ -40,12 +37,9 @@ const Question = ({ question, handleAnswersStat }) => {
 		}
 	}, [selectedAnswer]);
 
-	const decreaseNum = () => setNum((prev) => prev - 1);
 	useEffect(() => {
-		setPause(false);
-		intervalRef.current = setInterval(decreaseNum, 1000);
-		return () => clearInterval(intervalRef.current);
-	}, []);
+		countdown > 0 && setTimeout(() => setCountdown(countdown - 1), 1000);
+	}, [countdown]);
 
 	if (question)
 		return (
@@ -78,7 +72,7 @@ const Question = ({ question, handleAnswersStat }) => {
 					)}
 				</div>
 				<div className="timer">
-					<p>{num}</p>
+					<p>{countdown}</p>
 				</div>
 			</div>
 		);
