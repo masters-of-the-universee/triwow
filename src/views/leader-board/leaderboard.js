@@ -3,18 +3,37 @@ import './leaderboard.scss'
 const LeaderBoard = () => {
     return (
 
-        <div>
-            <div className="hood">
-                <h2>Leader Board</h2>
-            </div>
-            <div>
-                <ul>
-                    <li className="list">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro explicabo quam eligendi ut sapiente. Reprehenderit qui commodi soluta corrupti sed ullam accusantium ad non at ipsam provident quibusdam perferendis voluptas iste quis labore aspernatur, possimus sint libero consequatur eum numquam inventore? Doloribus, quae architecto praesentium dolore aut magni numquam similique.
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <div class="container">
+		<div class="leaderboard">
+			<div class="head">
+				<h1>LEADER BOARD</h1>
+			</div>
+			<div class="body">
+				<ol>
+					<li>
+						<mark>Onur</mark>
+						<small>948</small>
+					</li>
+					<li>
+						<mark>Kaan</mark>
+						<small>750</small>
+					</li>
+					<li>
+						<mark>Sueda</mark>
+						<small>684</small>
+					</li>
+					<li>
+						<mark>Enes</mark>
+						<small>335</small>
+					</li>
+					<li>
+						<mark>Eray Malı</mark>
+						<small>296</small>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
 
     )
 }
