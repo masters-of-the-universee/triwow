@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import circlePng from '../../assets/circle.png';
 import downArrowSvg from '../../assets/down-arrow.svg';
 import '@lottiefiles/lottie-player';
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 export default function RandomCategoryPage() {
   const [rotateDeg, setRotateDeg] = useState(undefined);
@@ -16,7 +16,7 @@ export default function RandomCategoryPage() {
     const winIndex = Math.floor(winner / 60);
     return { degree, winIndex };
   }
-  
+
   useEffect(() => {
     setTimeout(() => {
       const degree = getRandomDegree();
@@ -27,7 +27,7 @@ export default function RandomCategoryPage() {
       }, 4000);
     }, 200);
   }, []);
-  
+
   const history = useHistory();
   useEffect(() => {
     const questionCategoryList = {
@@ -38,7 +38,7 @@ export default function RandomCategoryPage() {
       ARTS: 25,
       SCIENCE: 17
     };
-    const {ARTS, GENERAL_KNOWLEDGE, GEOGRAPHY, HISTORY,SCIENCE,SPORTS} = questionCategoryList
+    const { ARTS, GENERAL_KNOWLEDGE, GEOGRAPHY, HISTORY, SCIENCE, SPORTS } = questionCategoryList;
     const winnerRouterPushing = {
       0: SPORTS,
       1: ARTS,
@@ -46,20 +46,18 @@ export default function RandomCategoryPage() {
       3: GEOGRAPHY,
       4: HISTORY,
       5: SCIENCE
-    }
-    if(randomWinner){
-      setTimeout(() =>{
-        history.push(`/questions/${winnerRouterPushing[randomWinner]}`)
+    };
+    if (randomWinner) {
+      setTimeout(() => {
+        history.push(`/questions/${winnerRouterPushing[randomWinner]}`);
       }, 300);
     }
-  }, [randomWinner])
-
-  
+  }, [randomWinner]);
 
   const categories = ['😌', '😇', '🥱', '😏', '🤩', '🤓'];
 
   const transformRotateStyle = {
-    transform: `rotate(-${rotateDeg}deg)`,
+    transform: `rotate(-${rotateDeg}deg)`
   };
   return (
     <section className="category">
