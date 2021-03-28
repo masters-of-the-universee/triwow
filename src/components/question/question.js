@@ -12,10 +12,9 @@ const types = {
   BOOLEAN: 'boolean'
 };
 
-const Question = ({ question, handleAnswersStat }) => {
+const Question = ({ question, handleAnswersStat, countdown }) => {
   const [answers, setAnswers] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState(undefined);
-  const [countdown, setCountdown] = useState(15);
 
   useEffect(() => {
     setSelectedAnswer(undefined);
@@ -33,9 +32,7 @@ const Question = ({ question, handleAnswersStat }) => {
     }
   }, [selectedAnswer]);
 
-  useEffect(() => {
-    if (countdown > 0) return setTimeout(() => setCountdown(countdown - 1), 1000);
-  }, [countdown]);
+  
 
   if (question)
     return (
