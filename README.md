@@ -1,6 +1,10 @@
 # Triwow Demo Release
 
-A game .... (some description goes there)
+A quizz game app maded with React.
+You will get 5 different questions and the time for each one is 15 secs. Must choose
+wisely because you will not be able to return back and choose another answer. If you do
+not manage to choose the answer before the coundown ends, the question will be answered
+as wrong.
 
 ## Techs
 
