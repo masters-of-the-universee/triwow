@@ -6,28 +6,28 @@ wisely because you will not be able to return back and choose another answer. If
 not manage to choose the answer before the coundown ends, the question will be answered
 as wrong.
 
-## Techs
+## 💻 Techs
 
 - React
 - Redux
 - Trivia Open API -> [some link goes there](https://google.com)
 - ...
 
-## 📦Installation
+## 📦 Installation
 
-#### 📰Clone the project
+#### 📰 Clone the project
 
 ```bash
 git clone https://github.com/masters-of-the-universee/triwow.git
 ```
 
-#### 🔻Install the depedencies
+#### 🔻 Install the depedencies
 
 ```bash
 npm install
 ```
 
-#### 🏃‍♂️Start the project
+#### 🏃‍♂️ Start the project
 
 ```bash
 # for dev
@@ -36,7 +36,7 @@ npm run start
 npm run build
 ```
 
-## ✔TODO LIST
+## ✔ TODO LIST
 
 > check the todos if you fix it.
 
