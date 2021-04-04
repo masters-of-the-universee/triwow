@@ -1,29 +1,33 @@
-# Triwow Demo Release
+# Triwow (Quizz App)
 
-A game .... (some description goes there)
+A quizz game app maded with React.
+You will get 5 different questions and the time for each one is 15 secs. Must choose
+wisely because you will not be able to return back and choose another answer. If you do
+not manage to choose the answer before the coundown ends, the question will be answered
+as wrong.
 
-## Techs
+## 💻 Techs
 
 - React
 - Redux
 - Trivia Open API -> [some link goes there](https://google.com)
 - ...
 
-## Installation
+## 📦 Installation
 
-#### Clone the project
+#### 📰 Clone the project
 
 ```bash
 git clone https://github.com/masters-of-the-universee/triwow.git
 ```
 
-#### Install the depedencies
+#### 🔻 Install the depedencies
 
 ```bash
 npm install
 ```
 
-#### Start the project
+#### 🏃‍♂️ Start the project
 
 ```bash
 # for dev
@@ -32,7 +36,7 @@ npm run start
 npm run build
 ```
 
-## TODO LIST
+## ✔ TODO LIST
 
 > check the todos if you fix it.
 
@@ -62,7 +66,7 @@ npm run build
   - [ ] Current players point
   - [ ] Replay button integration
   - [ ] ...
-## Authors:
+## 🖊Authors:
 
 - [github@enesdumanli](https://github.com/enesdumanli)
 - [github@eraydurak](https://github.com/eraydurak)
