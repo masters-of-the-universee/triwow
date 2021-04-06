@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import Question from '../../components/question/question';
 import Checkbox from '../../components/checkbox/index';
 import Loader from '../../components/loader/index';
-import useCountDown from 'react-countdown-hook'
+import useCountDown from 'react-countdown-hook';
+import Leaderboard from '../../components/leaderboard/leaderboard'
 import './index.scss';
 
 const initialTime = 15 * 1000; // initial time in milliseconds, defaults to 60000
@@ -15,13 +16,11 @@ const QuestionsPage = function ({ match, ...props }) {
   const [answers, setAnswers] = useState([]);
   const [isGameDone, setGameDone] = useState(false);
 
-
   const [timeLeft, { start, pause, resume, reset }] = useCountDown(initialTime, interval);
 
   useEffect(() => {
     start();
   }, []);
-  
 
   useEffect(() => {
     getQuestions(categoryId);
@@ -35,41 +34,49 @@ const QuestionsPage = function ({ match, ...props }) {
 
   const { categoryId } = useParams();
 
-  
-  
   function handleAnswersStat(data) {
-    if(data.answer){
+    if (data.answer) {
       const currentTime = timeLeft / 1000;
-      start((currentTime + 10) *1000)
+      start((currentTime + 10) * 1000);
     }
     setAnswers([...answers, data.answer]);
     setQuestionOrder(questionOrder + 1);
   }
 
   useEffect(() => {
-    if((timeLeft / 1000) <= 0){
-      setGameDone(true)
+    console.log("timing");
+    if (timeLeft / 1000 <= 0) {
+      return setGameDone(true);
     }
-  }, [timeLeft])
+    const wrongAnswers = answers.filter(ans => !ans);
+    if(wrongAnswers.length > 2) {
+      return setGameDone(true);
+    }
+
+    setGameDone(false)
+  }, [timeLeft, answers]);
 
   return (
-    <div>
-      <div className="answers">
-        {answers ? answers.map((ans, i) => <Checkbox key={i} isTrue={ans} color="#000" />) : null}
-      </div>
-      {questions[questionOrder] !== undefined ? (
-        <Question
-          handleAnswersStat={handleAnswersStat}
-          question={questions[questionOrder]}
-          countdown={timeLeft / 1000}
-        ></Question>
-      ) : (
-        <div className="loader-container">
-          <Loader />
+    isGameDone ? (
+      <Leaderboard />
+    ) : (
+      <div>
+        <div className="answers">
+          {answers ? answers.map((ans, i) => <Checkbox key={i} isTrue={ans} color="#000" />) : null}
         </div>
-      )}
-    </div>
-  );
+        {questions[questionOrder] !== undefined ? (
+          <Question
+            handleAnswersStat={handleAnswersStat}
+            question={questions[questionOrder]}
+            countdown={timeLeft / 1000}></Question>
+        ) : (
+          <div className="loader-container">
+            <Loader />
+          </div>
+        )}
+      </div>
+    )
+  )
 };
 
 export default QuestionsPage;
