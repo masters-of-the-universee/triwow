@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 export default function RandomCategoryPage() {
   const [rotateDeg, setRotateDeg] = useState(undefined);
-  const [randomWinner, setRandomWinner] = useState(undefined);
+  const [randomWinner, setRandomWinner] = useState(null);
   const lootiePlayerEl = useRef(null);
 
   function getRandomDegree() {
@@ -20,6 +20,7 @@ export default function RandomCategoryPage() {
   useEffect(() => {
     setTimeout(() => {
       const degree = getRandomDegree();
+      console.log(degree)
       setRotateDeg(degree.degree);
       setTimeout(() => {
         setRandomWinner(degree.winIndex);
@@ -40,14 +41,14 @@ export default function RandomCategoryPage() {
     };
     const { ARTS, GENERAL_KNOWLEDGE, GEOGRAPHY, HISTORY, SCIENCE, SPORTS } = questionCategoryList;
     const winnerRouterPushing = {
-      0: SPORTS,
-      1: ARTS,
-      2: GENERAL_KNOWLEDGE,
-      3: GEOGRAPHY,
-      4: HISTORY,
-      5: SCIENCE
+      0: GEOGRAPHY,
+      1: SPORTS,
+      2: HISTORY,
+      3: GENERAL_KNOWLEDGE,
+      4: SCIENCE,
+      5: ARTS
     };
-    if (randomWinner) {
+    if (randomWinner !== null) {
       setTimeout(() => {
         history.push(`/questions/${winnerRouterPushing[randomWinner]}`);
       }, 1200);
