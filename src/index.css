@@ -17,3 +17,48 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.main{
+  position: relative;
+}
+.music-button{	
+  background-color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.3s all ease;
+  border-radius: 7px;
+  font-weight: bold;
+  border: 1px solid rgba(0, 174, 255, 0.788);
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  content: '';
+  top: 50px;
+  right: 50px;
+}
+.music-button img{
+  width: 20px;
+  height: 20px;
+}
+.music-button:hover {
+  background-color: rgba(0, 174, 255, 0.377);
+  color: rgb(85, 96, 255);
+  transition: 0.3s all ease;
+}
+
+@media screen and (min-width: 374px) and (max-width: 530px){
+  .music-button{
+    top:20px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 531px) and (max-width: 768px) {
+  .music-button{
+    top: 20px;
+    right: 25px;
+  }
+}
