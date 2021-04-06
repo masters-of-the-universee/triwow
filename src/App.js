@@ -3,7 +3,6 @@ import RandomCategory from './views/random-category-page/random-category-page';
 import Questions from './views/questions/index';
 import ModeSelectionPage from './views/mode-select-page/mode-select-page';
 import LoginPage from './views/login-page/login-page';
-import LeaderBoard from './views/leader-board/leaderboard';
 
 function App() {
   return (
@@ -20,16 +19,10 @@ function App() {
             <li>
               <Link to="/random-category">Random category</Link>
             </li>
-            <li>
-              <Link to="/leader-board">Leader Board</Link>
-            </li>
           </ul>
         </nav>
         <main>
           <Switch>
-            <Route path="/leader-board">
-              <LeaderBoard />
-            </Route>
             <Route path="/questions/:categoryId">
               <Questions />
             </Route>
