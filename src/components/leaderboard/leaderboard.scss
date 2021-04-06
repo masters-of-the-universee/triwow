@@ -1,13 +1,9 @@
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-body {
-  height: 100%;
-  font: 16px/1.2 'Roboto', sans-serif;
-  color: #333;
-}
+$blue: #53b0fc;
+$pink: #e8d7fe;
+$orange: #fba51e;
+$green: #d1e149;
+$purple: #9f7cfb;
+$green: #5ce0d5;
 
 a {
   display: inline-block;
@@ -28,10 +24,8 @@ a {
 
 /* container */
 .leaderboard-container {
-  width: 300px;
   height: auto;
   border-radius: 10px;
-  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: absolute;
   top: 50%;
@@ -40,60 +34,42 @@ a {
   z-index: 1;
   overflow: hidden;
   .leaderboard {
-    background: linear-gradient(to bottom, #3a404d, #181c26);
+    // background-color: rgba($color: $purple, $alpha: 1);
+    padding: 30px 45px;
+    background: rgba(255, 255, 255, 0.342);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
     .head {
-      padding: 20px 16px;
-      color: snow;
-      font-size: 20px;
+      color: #101010;
+      font-size: 28px;
       text-align: center;
-
-      h1 {
-        display: inline-block;
-        margin-left: 4px;
-      }
-
-      .body {
-        color: snow;
-        font-size: 16px;
-
-        ol {
-          counter-reset: number;
-        }
-      }
+      // border-bottom: 2px solid rgba($color: #101010, $alpha: 0.2);
+      letter-spacing: 1px;
+      margin: 10px 0;
+      margin-bottom: 45px;
     }
-
+    .body {
+      overflow-y: scroll;
+      max-height: 225px;
+      padding-right: 10px;
+    }
     li {
-      padding: 16px;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-      // mark {
-      //     flex-grow: 1;
-      //     color: snow;
-      //     background-color: transparent;
-      // }
-
-      // &::before {
-      //     counter-increment: number;
-      //     content: counter(number) ".";
-      //     margin-right: 4px;
-      // }
-
-      // &:nth-child(1){
-      //     background: #fa6855;
-      // }
-      // &:nth-child(2){
-      //     background: #e0574f;
-      // }
-      // &:nth-child(3){
-      //     background: #d7514d;
-      // }
-      // &:nth-child(4){
-      //     background: #cd4b4b;
-      // }
-      // &:nth-child(5){
-      //     background: #c24448;
-      // }
+      &.header {
+        color: #2c2c2c;
+      }
+      & + li {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 2px solid rgba($color: #101010, $alpha: 0.3);
+      }
     }
   }
 }
