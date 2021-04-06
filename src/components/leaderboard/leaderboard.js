@@ -9,9 +9,41 @@ const Leaderboard = () => {
         </div>
         <div className="body">
           <ul>
+            <li className="header">
+              <h4>Name</h4>
+              <h4>Score</h4>
+            </li>
             <li>
-              <mark>Onur</mark>
-              <small>948</small>
+              <p>Onur#15235869</p>
+              <span>948</span>
+            </li>
+            <li>
+              <p>Onur</p>
+              <span>948</span>
+            </li>
+            <li>
+              <p>Onur</p>
+              <span>948</span>
+            </li>
+            <li>
+              <p>Onur</p>
+              <span>948</span>
+            </li>
+            <li>
+              <p>Onur</p>
+              <span>948</span>
+            </li>
+            <li>
+              <p>Onur</p>
+              <span>948</span>
+            </li>
+            <li>
+              <p>Onur</p>
+              <span>948</span>
+            </li>
+            <li>
+              <p>Onur</p>
+              <span>948</span>
             </li>
           </ul>
         </div>
