@@ -2,11 +2,11 @@ import "./modeselectpage.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const ModeSelectPage = ({ value }) => {
+const ModeSelectPage = ({ user }) => {
 	return (
 		<div className="container">
 			<div className="navbar">
-				<h2> Welcome {value} !</h2>
+				<h2> Welcome {user.username + "#" + user.id} !</h2>
 				<h2> Choose the game mode!</h2>
 			</div>
 			<div className="buttons">
@@ -49,6 +49,6 @@ const ModeSelectPage = ({ value }) => {
 };
 
 const mapStateToProps = (state) => ({
-	value: state.value,
+	user: state.user,
 });
 export default connect(mapStateToProps)(ModeSelectPage);

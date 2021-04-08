@@ -1,6 +1,6 @@
-export const addingNewUsername = (newName) => {
+export const addingNewUsername = (user) => {
 	return {
 		type: "ADD_NEW_USERNAME",
-		payload: { newName },
+		payload: user,
 	};
 };
