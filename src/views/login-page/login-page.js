@@ -36,7 +36,7 @@ const LoginPage = ({ addingNewUsername }) => {
           <div className="music-section">
             <button
               className="tutorial btnbtn"
-              onClick={() => swal("TUTORIAL", "Oyun şöyle böyle oynanır")}>
+              onClick={() => swal("TUTORIAL", `              Write your name, Turn the wheel, Start solving questions!`)}>
               <img className="tutorialPhoto" src={qmarkPng} alt="qmarkpng" />
             </button>
           </div>
@@ -63,7 +63,7 @@ const LoginPage = ({ addingNewUsername }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
