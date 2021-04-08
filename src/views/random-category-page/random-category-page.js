@@ -20,7 +20,6 @@ export default function RandomCategoryPage() {
   useEffect(() => {
     setTimeout(() => {
       const degree = getRandomDegree();
-      console.log(degree)
       setRotateDeg(degree.degree);
       setTimeout(() => {
         setRandomWinner(degree.winIndex);

@@ -5,12 +5,14 @@ import Checkbox from '../../components/checkbox/index';
 import Loader from '../../components/loader/index';
 import useCountDown from 'react-countdown-hook';
 import Leaderboard from '../../components/leaderboard/leaderboard'
+import Database from '../../firebase/index'
+import {connect} from 'react-redux'
 import './index.scss';
 
 const initialTime = 15 * 1000; // initial time in milliseconds, defaults to 60000
 const interval = 1000;
 
-const QuestionsPage = function ({ match, ...props }) {
+const QuestionsPage = function ({ match, user, ...props }) {
   const [questions, setQuestions] = useState([]);
   const [questionOrder, setQuestionOrder] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -44,21 +46,30 @@ const QuestionsPage = function ({ match, ...props }) {
   }
 
   useEffect(() => {
-    console.log("timing");
-    if (timeLeft / 1000 <= 0) {
+    if ((timeLeft / 1000) === 1) {
       return setGameDone(true);
     }
     const wrongAnswers = answers.filter(ans => !ans);
     if(wrongAnswers.length > 2) {
       return setGameDone(true);
     }
-
-    setGameDone(false)
+    if(answers.length > 4){
+      return setGameDone(true);
+    }
   }, [timeLeft, answers]);
+
+  useEffect(() => {
+    if(isGameDone === true){
+      const db = new Database();
+      const correctAnswers = answers.filter(ans => ans);
+      const score = correctAnswers.length * 10;
+      db.updateUser(user.id, score);
+    }
+  }, [isGameDone])
 
   return (
     isGameDone ? (
-      <Leaderboard />
+      <Leaderboard user={user} />
     ) : (
       <div>
         <div className="answers">
@@ -79,4 +90,8 @@ const QuestionsPage = function ({ match, ...props }) {
   )
 };
 
-export default QuestionsPage;
+const mapStateToProps = (state) => ({
+	user: state.user,
+});
+
+export default connect(mapStateToProps)(QuestionsPage);
