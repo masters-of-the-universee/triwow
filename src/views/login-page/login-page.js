@@ -7,9 +7,11 @@ import { addingNewUsername } from "./../../actions/index";
 import Database from "../../firebase/index";
 import qmarkPng from "../../assets/question-mark.png";
 import swal from "sweetalert";
+import { nanoid } from 'nanoid'
 
 const LoginPage = ({ addingNewUsername }) => {
   const [newName, setNewName] = useState("");
+  const [error, setError] = useState("");
 
   const onChangeHandler = (e) => {
     setNewName(e.target.value);
@@ -20,11 +22,30 @@ const LoginPage = ({ addingNewUsername }) => {
   }, [newName]);
 
   const onClickHandler = async () => {
-    addingNewUsername(newName);
+    setError("");
+    const user = {
+      id: nanoid(7),
+      username: newName
+    }
+    if(newName.length < 3){
+      return setError("Please insert a valid name!")
+    }
+    addingNewUsername(user);
     const db = new Database();
-    const response = await db.addUser({ name: newName });
-    console.log(response);
+    const response = await db.addUser(user);
   };
+
+  async function anonymousClickHandler(){
+    setError("");
+    const randomId = nanoid(7);
+    const user = {
+      id: randomId,
+      username: randomId
+    }
+    addingNewUsername(user);
+    const db = new Database();
+    const response = await db.addUser(user);
+  }
 
   return (
     <div className="main-wrapper">
@@ -53,12 +74,13 @@ const LoginPage = ({ addingNewUsername }) => {
                 />
                 <label>Write your Name</label>
               </div>
+              { error ? <span className="error">{error}</span> : "" }
             </div>
           </div>
           <Link onClick={onClickHandler} to="/mode-selection">
             Play
           </Link>
-          <Link onClick={onClickHandler} to="/mode-selection">
+          <Link onClick={anonymousClickHandler} to="/mode-selection">
             Play as Anonymus
           </Link>
         </div>
