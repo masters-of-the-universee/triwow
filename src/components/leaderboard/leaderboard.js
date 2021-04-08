@@ -1,4 +1,4 @@
-import './leaderboard.scss';
+import "./leaderboard.scss";
 
 const Leaderboard = () => {
   return (
@@ -47,6 +47,12 @@ const Leaderboard = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="your-score">
+        <h4 className="your-name">
+          Your Name <span className="your-id">#123213</span>
+        </h4>
+        <p className="your-last-score">30</p>
       </div>
     </div>
   );

@@ -5,36 +5,14 @@ $green: #d1e149;
 $purple: #9f7cfb;
 $green: #5ce0d5;
 
-a {
-  display: inline-block;
-  color: #333;
-  text-decoration: none;
-}
-
-.blog {
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* container */
 .leaderboard-container {
-  height: auto;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
   .leaderboard {
-    // background-color: rgba($color: $purple, $alpha: 1);
     padding: 30px 45px;
     background: rgba(255, 255, 255, 0.342);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -42,12 +20,10 @@ a {
     -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-
     .head {
       color: #101010;
       font-size: 28px;
       text-align: center;
-      // border-bottom: 2px solid rgba($color: #101010, $alpha: 0.2);
       letter-spacing: 1px;
       margin: 10px 0;
       margin-bottom: 45px;
@@ -56,12 +32,26 @@ a {
       overflow-y: scroll;
       max-height: 225px;
       padding-right: 10px;
+      scroll-snap-type: y proximity;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 3px $purple;
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgba($color: $orange, $alpha: 0.5);
+        border-radius: 15px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba($color: $blue, $alpha: 0.3);
+      }
     }
     li {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       &.header {
         color: #2c2c2c;
       }
@@ -72,6 +62,29 @@ a {
       }
     }
   }
+  .your-score {
+    background: rgba(255, 255, 255, 0.342);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.192);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 400px;
+    margin-top: 50px;
+    border: 2px solid $orange;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .your-name {
+      margin-right: 90px;
+      .your-id {
+        color: white;
+        font-weight: 500;
+      }
+    }
+    .your-last-score {
+      margin-right: 30px;
+    }
+  }
 }
-
-/* leaderboard */
