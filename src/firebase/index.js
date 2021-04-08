@@ -41,11 +41,38 @@ class Database {
   async addUser(data) {
     const users = firestore.collection('users');
     try {
-      const response = await users.add({ ...data, created_at: Date() });
+      const response = await users.add({ ...data, created_at: Date(), score: 0 });
       return response.id;
     } catch (err) {
       return err;
     }
+  }
+  async updateUser(id, score){
+    const usersRef = firestore.collection("users");
+    const selectedUser = await usersRef.where("id", "==", `${id}`)
+    const data = await selectedUser.get()
+    data.forEach(i => {
+      usersRef.doc(i.id).update({
+        "score" : score
+      })
+      i.data();
+    })
+  }
+  async getMe(id){
+    const usersRef = firestore.collection("users");
+    const selectedUser = await usersRef.where("id", "==", `${id}`)
+    const data = await selectedUser.get()
+    let me;
+    data.forEach(i => {
+      me = i.data()
+    })
+    return me;
+  }
+  async getTopTen(){
+    let list = [];
+    const usersRef = firestore.collection("users");
+    usersRef.orderBy("score", "desc").limit(20).get().then((snap) => snap.forEach(usr => list.push(usr.data())))
+    return list;
   }
 }
 
