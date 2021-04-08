@@ -1,11 +1,11 @@
 const initialState = {
-  value: ' '
+  user: ' '
 };
 
 function addReducer(state = initialState, action) {
   switch (action.type) {
     case 'ADD_NEW_USERNAME':
-      return { ...state, value: action.payload.newName };
+      return { ...state, user: action.payload };
     default:
       return state;
   }
