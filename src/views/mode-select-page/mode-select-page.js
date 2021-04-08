@@ -10,12 +10,12 @@ const ModeSelectPage = ({ user }) => {
 				<h2> Choose the game mode!</h2>
 			</div>
 			<div className="buttons">
-				<Link className="buttons-button disabled">
+				<a className="buttons-button disabled">
 					<span>Multiplayer</span>
 					<div className="tooltiptext">
 						<p>Coming soon...</p>
 					</div>
-				</Link>
+				</a>
 				<Link className="buttons-button" to="/random-category">
 					<span>Classic Mode</span>
 					<div className="tooltiptext">
@@ -37,12 +37,12 @@ const ModeSelectPage = ({ user }) => {
 						</p>
 					</div>
 				</Link>
-				<Link className="buttons-button disabled">
+				<a className="buttons-button disabled">
 					<span>Rapid Fire Mode</span>
 					<div className="tooltiptext">
 						<p>Coming soon...</p>
 					</div>
-				</Link>
+				</a>
 			</div>
 		</div>
 	);

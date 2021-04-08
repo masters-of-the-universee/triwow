@@ -52,6 +52,10 @@ $green: #5ce0d5;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      span.score{
+        font-size: 12px;
+        color: rgba($color: #101010, $alpha: 0.6);
+      }
       &.header {
         color: #2c2c2c;
       }
@@ -81,6 +85,9 @@ $green: #5ce0d5;
       .your-id {
         color: white;
         font-weight: 500;
+        margin-left: 8px;
+        font-size: 12px;
+        color: rgba($color: #101010, $alpha: 0.6);
       }
     }
     .your-last-score {

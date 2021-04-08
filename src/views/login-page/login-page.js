@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link , useHistory} from "react-router-dom";
 import "./loginpage.scss";
 import circlePng from "../../assets/circle.png";
 import { connect } from "react-redux";
@@ -18,23 +18,25 @@ const LoginPage = ({ addingNewUsername }) => {
   };
 
   useEffect(() => {
-    console.log(newName);
   }, [newName]);
+  const history= useHistory();
 
   const onClickHandler = async () => {
     setError("");
     const user = {
       id: nanoid(7),
-      username: newName
+      username: newName.trim()
     }
-    if(newName.length < 3){
-      return setError("Please insert a valid name!")
+    if(user.username.length < 2 || user.username.length > 7){
+      return setError("Username should be between 3-6 letters!")
     }
+
     addingNewUsername(user);
     const db = new Database();
     const response = await db.addUser(user);
+    history.push("/mode-selection")
   };
-
+  
   async function anonymousClickHandler(){
     setError("");
     const randomId = nanoid(7);
@@ -45,6 +47,7 @@ const LoginPage = ({ addingNewUsername }) => {
     addingNewUsername(user);
     const db = new Database();
     const response = await db.addUser(user);
+    history.push("/mode-selection")
   }
 
   return (
@@ -77,12 +80,12 @@ const LoginPage = ({ addingNewUsername }) => {
               { error ? <span className="error">{error}</span> : "" }
             </div>
           </div>
-          <Link onClick={onClickHandler} to="/mode-selection">
+          <a onClick={onClickHandler}>
             Play
-          </Link>
-          <Link onClick={anonymousClickHandler} to="/mode-selection">
+          </a>
+          <a onClick={anonymousClickHandler} to="/mode-selection">
             Play as Anonymus
-          </Link>
+          </a>
         </div>
       </div>
     </div >
