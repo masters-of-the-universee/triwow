@@ -72,14 +72,16 @@ lottie-player {
 
 @media screen and (max-width: 414px) {
   section.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .random {
       &__down {
-        margin: 40px auto;
         img {
         }
       }
       &__rotate {
-        width: 80%;
+        width: 65%;
       }
     }
   }
