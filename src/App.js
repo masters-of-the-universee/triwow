@@ -29,19 +29,6 @@ function App({ user }) {
   return (
     <section>
       <Router>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/mode-selection">Mode-selection</Link>
-            </li>
-            <li>
-              <Link to="/random-category">Random category</Link>
-            </li>
-          </ul>
-        </nav>
         <main>
           <button className="music-button btnbtn" onClick={() => playSound(playAudio)}>
             {' '}

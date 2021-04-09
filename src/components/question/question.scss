@@ -73,3 +73,17 @@ $green: #5ce0d5;
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .question-card {
+    width: 60%;
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .question-card {
+    width: 90%;
+    padding: 20px 20px;
+  }
+}
