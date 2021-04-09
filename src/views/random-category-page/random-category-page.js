@@ -49,7 +49,7 @@ export default function RandomCategoryPage() {
     };
     if (randomWinner !== null) {
       setTimeout(() => {
-        // history.push(`/questions/${winnerRouterPushing[randomWinner]}`);
+        history.push(`/questions/${winnerRouterPushing[randomWinner]}`);
       }, 1200);
     }
   }, [randomWinner]);
