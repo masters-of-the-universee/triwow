@@ -7,7 +7,8 @@ const ModeSelectPage = ({ user }) => {
     <div className="mode-container">
       <div className="navbar">
         <h4>
-          Welcome {user.username} <span>#{user.id}</span>
+          Welcome <span className="username">{user.username}</span>{' '}
+          <span className="id">#{user.id}</span>
         </h4>
         <h2> Choose the game mode!</h2>
       </div>
