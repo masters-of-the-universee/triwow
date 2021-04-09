@@ -16,6 +16,13 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(255, 74, 169);
+  background: linear-gradient(
+    to top left,
+    rgba(255, 74, 167, 0.6) 0%,
+    rgba(63, 108, 245, 0.6) 80%,
+    rgba(254, 98, 85, 0.6) 100%
+  );
 }
 
 .main{
