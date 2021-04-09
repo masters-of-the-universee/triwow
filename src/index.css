@@ -39,21 +39,17 @@ body {
   background-color: white;
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center;
-  transition: 0.3s all ease;
   border-radius: 7px;
   font-weight: bold;
   border: 1px solid rgba(0, 174, 255, 0.788);
-  padding: 5px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8px;
   position: absolute;
   content: '';
   top: 50px;
   right: 50px;
 }
 .music-button img{
+  display: block;
   width: 20px;
   height: 20px;
 }
