@@ -80,3 +80,18 @@ $tooltipcolor: $purple;
     }
   }
 }
+
+@media screen and (max-width: 1150px) {
+  .buttons{
+    flex-direction: column;
+    justify-content: center;
+
+    &-button {
+      width: 100%;
+      & + .buttons-button {
+        margin-left: unset;
+        margin-top: 20px;
+      }
+    }
+  }
+}
