@@ -81,7 +81,6 @@ $green: #5ce0d5;
     align-items: center;
     justify-content: space-between;
     .your-name {
-      margin-right: 90px;
       .your-id {
         color: white;
         font-weight: 500;
@@ -91,7 +90,29 @@ $green: #5ce0d5;
       }
     }
     .your-last-score {
-      margin-right: 30px;
+      margin-left: auto;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .leaderboard-container {
+    .leaderboard {
+      padding: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .leaderboard-container {
+    .leaderboard {
+      width: 90%;
+      padding: 20px;
+    }
+    .your-score {
+      width: 90%;
+      padding: 20px;
     }
   }
 }
