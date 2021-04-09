@@ -23,15 +23,15 @@ html {
   width: 100%;
   height: 100vh;
 }
-body {
-  background: rgb(255, 74, 169);
-  background: linear-gradient(
-    to top left,
-    rgba(255, 74, 167, 0.6) 0%,
-    rgba(63, 108, 245, 0.6) 80%,
-    rgba(254, 98, 85, 0.6) 100%
-  );
-}
+// body {
+//   background: rgb(255, 74, 169);
+//   background: linear-gradient(
+//     to top left,
+//     rgba(255, 74, 167, 0.6) 0%,
+//     rgba(63, 108, 245, 0.6) 80%,
+//     rgba(254, 98, 85, 0.6) 100%
+//   );
+// }
 nav {
   display: none;
   visibility: hidden;
@@ -340,7 +340,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aliceblue;
     overflow: hidden;
     .login-container {
       display: flex;
@@ -349,7 +348,7 @@ nav {
       border-radius: 20px;
       flex-direction: column;
       padding: 20px;
-      padding-bottom: 0;
+      padding-bottom: 30px;
       .left-section {
         width: 100%;
         height: auto;
