@@ -68,8 +68,5 @@ npm run build
   - [ ] ...
 ## 🖊Authors:
 
-- [github@enesdumanli](https://github.com/enesdumanli)
 - [github@eraydurak](https://github.com/eraydurak)
-- [github@suedaoguzalp](https://github.com/suedaoguzalp)
-- [github@onurozdemir26](https://github.com/onurozdemir26)
 - [github@kaanersoy](https://github.com/kaanersoy)
